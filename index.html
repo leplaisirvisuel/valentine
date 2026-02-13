@@ -122,7 +122,19 @@
       <button id="no">la 🙃</button>
     </div>
 
-    <div class="result" id="result">Yesss Emwaaah nhebek  💖💖💖</div>
+    <div class="result" id="result">
+  <h2>Yesss Emwaah nhebek !! 💖</h2>
+  <img src="photo.jpg" id="lovePhoto" style="
+    margin-top:15px;
+    max-width:250px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.4);
+    opacity:0;
+    transform:scale(0.8);
+    transition:all 0.6s ease;
+  ">
+</div>
+
   </div>
 
   <div class="hearts" id="hearts"></div>
@@ -171,11 +183,20 @@
 
     // si elle clique "Oui"
     yesBtn.addEventListener("click", () => {
-      result.style.display = "block";
-      yesBtn.disabled = true;
-      noBtn.disabled = true;
-      confettiHearts();
-    });
+     yesBtn.addEventListener("click", () => {
+  result.style.display = "block";
+  yesBtn.disabled = true;
+  noBtn.disabled = true;
+
+  const photo = document.getElementById("lovePhoto");
+  setTimeout(() => {
+    photo.style.opacity = "1";
+    photo.style.transform = "scale(1)";
+  }, 200);
+
+  confettiHearts();
+});
+
 
     function confettiHearts() {
       const emojis = ["💖","💘","💗","💞","💕","❤️"];
